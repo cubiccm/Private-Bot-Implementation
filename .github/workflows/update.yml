@@ -3,7 +3,7 @@ name: Regular Update
 on:
   workflow_dispatch:
   schedule:
-    - cron: '3/10 * * * *'
+    - cron: '3/12 * * * *'
 
 jobs:
   update:
@@ -23,7 +23,7 @@ jobs:
 
       - name: Login
         id: login
-        run: python3 foundation/login.py --cookie=${{ steps.login.outputs.logincookie }} --uid=${{ secrets.NJU_USERNAME }} --pwd=${{ secrets.NJU_PASSWORD }} --github
+        run: python3 foundation/login.py --cookie=${{ secrets.EAISESS }} --uid=${{ secrets.NJU_USERNAME }} --pwd=${{ secrets.NJU_PASSWORD }} --github
       
       - name: Record electricity
         env:
